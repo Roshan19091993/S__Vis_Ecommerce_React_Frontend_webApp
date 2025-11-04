@@ -15,34 +15,35 @@ const Modal = ({ isModalOpen, setIsModalOpen, children }) => {
     <div
       className="d-flex justify-content-center align-items-center position-fixed top-0 start-0 w-100 h-100"
       style={{
-        backgroundColor: 'rgba(0,0,0,0.6)',
-        backdropFilter: 'blur(4px)',
+        backgroundColor: 'rgba(0, 0, 0, 0.6)', // dark overlay
         zIndex: 1050,
       }}
       onClick={handleOverlayClick}
     >
       <div
-        className="position-relative"
+        className="position-relative shadow-lg"
         style={{
-          backgroundColor: 'transparent', // transparent modal
-          borderRadius: '12px',
-          padding: '20px',
+          backgroundColor: '#fff', // ✅ solid white background
+          borderRadius: '10px',
+          padding: '30px 25px',
           maxWidth: '500px',
           width: '90%',
+          boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)', // ✅ visible elevation
+          position: 'relative',
         }}
       >
-        {/* Floating Close Button Lowered */}
+        {/* Close Button */}
         <button
           type="button"
           className="btn-close position-absolute"
           aria-label="Close"
           onClick={closeModal}
           style={{
-            top: '24px', // move down
+            top: '15px',
             right: '15px',
-            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+            backgroundColor: 'rgba(255, 255, 255, 0.8)',
             borderRadius: '50%',
-            padding: '6px',
+            padding: '8px',
           }}
         ></button>
 
