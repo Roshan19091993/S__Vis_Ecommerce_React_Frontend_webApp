@@ -1,0 +1,157 @@
+/* General Navbar Styling */
+.navbar-container {
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Logo */
+.navbar-logo .logo-img {
+  width: 45px; /* smaller logo */
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #17a2b8;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* SearchBar Container */
+.search-container {
+  flex-grow: 1;
+  max-width: 180px; /* reduced search bar size on mobile */
+  margin: 0 10px;
+}
+
+/* Icons Section */
+.icons-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+  color: #343a40;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  padding: 2px 8px;
+}
+
+.login-register-btn,
+.user-icon-btn {
+  border: none;
+  background-color: transparent;
+  color: #343a40;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-register-btn:hover,
+.user-icon-btn:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+/* Mobile and Tablet (Below 768px) */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: row;  /* Align everything in a row */
+    justify-content: space-between;  /* Space out elements across the row */
+    gap: 10px; /* Reduce gap between elements */
+  }
+
+  .navbar-logo .logo-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .search-container {
+    max-width: 120px; /* Make the search bar even smaller on mobile */
+    flex-grow: 1;
+  }
+
+  .icons-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end; /* Align cart and user icon to the right */
+    width: auto; /* Ensure it doesn't take up more space than necessary */
+  }
+
+  .cart-icon,
+  .user-icon-btn {
+    font-size: 1.5rem;  /* Smaller icon sizes */
+  }
+
+  .badge {
+    top: -5px;
+    right: -5px;
+    font-size: 0.6rem; /* Smaller badge font size */
+  }
+
+  .login-register-btn {
+    display: none;  /* Hide the login/register button on mobile */
+  }
+
+  /* Bottom Links Section - Centered with space between */
+  .bottom-links {
+    display: flex;
+    justify-content: center;  /* Center the links */
+    gap: 20px;  /* Adds space between the items */
+    width: 100%;
+    padding: 10px 0;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+  }
+
+  .link-item {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #343a40;
+    text-decoration: none;
+  }
+
+  .link-item:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Larger Screens (Laptop and Above) */
+@media (min-width: 768px) {
+  .navbar-logo .logo-img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .search-container {
+    max-width: 500px;
+  }
+
+  .icons-container {
+    gap: 15px;
+  }
+
+  .bottom-links .links-container {
+    flex-direction: row;
+  }
+}

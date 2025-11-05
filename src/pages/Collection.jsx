@@ -1,9 +1,22 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import image1 from "../assets/products/product1.jpg";
-import image2 from "../assets/products/product2.jpg";
-import image3 from "../assets/products/product3.jpg";
+import Image1 from "../assets/products/product1.jpg"; // men's shorts
+import Image2 from "../assets/products/product2.jpg"; // xl t-shirts men
+import Image3 from "../assets/products/product3.jpg"; // men shirts
+import Image4 from "../assets/products/product4.webp"; // men shirts
+import Image5 from "../assets/products/product5.webp"; // men blazer
+import Image6 from "../assets/products/product6.webp"; // men 
+import Image7 from "../assets/products/product7.webp"; // women dress
+import Image8 from "../assets/products/product8.webp"; // women
+import Image9 from "../assets/products/product9.webp"; // jents pant
+import Image10 from "../assets/products/product10.webp"; // men jackets
+import boys2 from "../assets/ProjectImage/T-ShirtsImages/Kids/Boyz/boys2.jpg";
+import boys3 from "../assets/ProjectImage/Pants/KIDS/Boyz/boysPant.jpg";
+import girls1 from "../assets/ProjectImage/Coats/Kids/girls/girlsBlezzer.jpg";
+
+import { useDispatch } from "react-redux";
+  import { addToCart } from "../redux/cartSlice";
 
 function Collection() {
   const [category, setCategory] = useState("");
@@ -12,32 +25,35 @@ function Collection() {
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [priceRange, setPriceRange] = useState(500);
-  // const [cart, setCart] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const [showDetailsModal, setShowDetailsModal] = useState(false); // Modal visibility
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
 
   const products = {
     kids: {
       boys: [
-        { name: "Boys T-shirt", price: 25, img: [image1, image2, image3], size: "M", color: "Red", brand: "Nike", description: "Comfortable cotton t-shirt." },
-        { name: "Boys Jeans", price: 40, img: [image2], size: "L", color: "Blue", brand: "Adidas", description: "Stylish denim jeans for boys." },
+        { name: "Boys T-shirt", price: 25, img: [boys2], size: "M", color: "orange", brand: "Nike", description: "Comfortable cotton t-shirt." },
+        { name: "Boys pants", price: 40, img: [boys3], size: "L", color: "Blue", brand: "Adidas", description: "Stylish denim jeans for boys." },
       ],
       girls: [
-        { name: "Girls Dress", price: 30, img: [image3], size: "S", color: "Green", brand: "Puma", description: "Elegant dress for girls." },
-        { name: "Girls Top", price: 20, img: [image1], size: "M", color: "Red", brand: "Nike", description: "Stylish top for girls." },
+        { name: "Girls Dress", price: 30, img: [Image1], size: "S", color: "Green", brand: "mulchand", description: "Elegant dress for girls." },
+        { name: "Girls blezzer", price: 20, img: [girls1], size: "M", color: "blue", brand: "Nike", description: "Stylish top for girls." },
       ],
     },
     men: [
-      { name: "Men Shirt", price: 35, img: [image1], size: "L", color: "Blue", brand: "Nike", description: "A classic men’s shirt." },
-      { name: "Men Pants", price: 50, img: [image2], size: "XL", color: "Green", brand: "Adidas", description: "Comfortable pants for men." },
+      { name: "Men blezzer", price: 35, img: [Image5], size: "L", color: "Blue", brand: "Nike", description: "A classic men’s shirt." },
+      { name: "Men Pants", price: 50, img: [Image9], size: "XL", color: "Green", brand: "Adidas", description: "Comfortable pants for men." },
     ],
     women: [
-      { name: "Women Dress", price: 45, img: [image3], size: "M", color: "Red", brand: "Puma", description: "Stylish women’s dress." },
-      { name: "Women Top", price: 30, img: [image1], size: "S", color: "Blue", brand: "Nike", description: "Fashionable top for women." },
+      { name: "Women Dress", price: 45, img: [Image7], size: "M", color: "pink", brand: "Puma", description: "Stylish women’s dress." },
+      { name: "Women t-shirts", price: 30, img: [Image8], size: "S", color: "Blue", brand: "Nike", description: "Fashionable top for women." },
     ],
   };
 
-  // Get filtered products based on selected filters
   const getFilteredProducts = () => {
     let list = [];
 
@@ -64,6 +80,23 @@ function Collection() {
     });
   };
 
+  // // Add product to cart
+  // const addToCart = (product) => {
+  //   setCart((prevCart) => [...prevCart, product]);
+  // };
+
+  // Set selected product for details modal and show the modal
+  const viewProductDetails = (product) => {
+    setSelectedProduct(product);
+    setShowDetailsModal(true);
+  };
+
+  // Close product details modal
+  const closeDetailsModal = () => {
+    setShowDetailsModal(false);
+    setSelectedProduct(null);
+  };
+
   // Toggle filter (add/remove selected filter)
   const toggleFilter = (value, setter, current) => {
     if (current.includes(value)) setter(current.filter((v) => v !== value));
@@ -78,24 +111,6 @@ function Collection() {
     setPriceRange(500);
   };
 
-  // // Add product to cart
-  // const addToCart = (product) => {
-  //   setCart((prevCart) => [...prevCart, product]);
-  // };
-
-  //  Set selected product for details modal
-  const viewProductDetails = (product) => {
-    setSelectedProduct(product);
-  };
-
-  // Handle Breadcrumb click and reset state for Collection
-  const handleBreadcrumbClick = () => {
-    setCategory("");      // Reset category
-    setSubcategory("");   // Reset subcategory
-    resetFilters();       // Reset all filters
-    navigate("/collection");  // Navigate to the default collection page
-  };
-
   const filteredProducts = getFilteredProducts();
 
   return (
@@ -106,35 +121,17 @@ function Collection() {
           <nav aria-label="breadcrumb" className="mb-2">
             <ol className="breadcrumb mb-0 flex-wrap">
               <li className="breadcrumb-item">
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate("/"); // Navigate to home
-                  }}
-                >
+                <a href="#" onClick={(e) => { e.preventDefault(); navigate("/"); }}>
                   Home
                 </a>
               </li>
-
               <li className="breadcrumb-item">
-                <a
-                  href="#"
-                  onClick={handleBreadcrumbClick} // Clicking on Collection resets to default state
-                >
+                <a href="#" onClick={() => { setCategory(""); setSubcategory(""); resetFilters(); navigate("/collection"); }}>
                   Collection
                 </a>
               </li>
-              {category && (
-                <li className="breadcrumb-item active">
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
-                </li>
-              )}
-              {category === "kids" && subcategory && (
-                <li className="breadcrumb-item active">
-                  {subcategory.charAt(0).toUpperCase() + subcategory.slice(1)}
-                </li>
-              )}
+              {category && <li className="breadcrumb-item active">{category.charAt(0).toUpperCase() + category.slice(1)}</li>}
+              {category === "kids" && subcategory && <li className="breadcrumb-item active">{subcategory.charAt(0).toUpperCase() + subcategory.slice(1)}</li>}
             </ol>
           </nav>
         </div>
@@ -144,54 +141,19 @@ function Collection() {
       <div className="container text-center my-3">
         <ul className="nav justify-content-center nav-pills flex-wrap">
           <li className="nav-item dropdown">
-            <a
-              className={`nav-link dropdown-toggle ${category === "kids" ? "active" : ""}`}
-              data-bs-toggle="dropdown"
-              href="#"
-              role="button"
-              aria-expanded="false"
-              onClick={() => setCategory("kids")}
-            >
+            <a className={`nav-link dropdown-toggle ${category === "kids" ? "active" : ""}`} data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" onClick={() => setCategory("kids")}>
               Kids
             </a>
             <ul className="dropdown-menu">
-              <li>
-                <a
-                  className={`dropdown-item ${subcategory === "boys" ? "active" : ""}`}
-                  href="#"
-                  onClick={() => setSubcategory("boys")}
-                >
-                  Boys
-                </a>
-              </li>
-              <li>
-                <a
-                  className={`dropdown-item ${subcategory === "girls" ? "active" : ""}`}
-                  href="#"
-                  onClick={() => setSubcategory("girls")}
-                >
-                  Girls
-                </a>
-              </li>
+              <li><a className={`dropdown-item ${subcategory === "boys" ? "active" : ""}`} href="#" onClick={() => setSubcategory("boys")}>Boys</a></li>
+              <li><a className={`dropdown-item ${subcategory === "girls" ? "active" : ""}`} href="#" onClick={() => setSubcategory("girls")}>Girls</a></li>
             </ul>
           </li>
           <li className="nav-item">
-            <a
-              className={`nav-link ${category === "men" ? "active" : ""}`}
-              href="#"
-              onClick={() => setCategory("men")}
-            >
-              Men
-            </a>
+            <a className={`nav-link ${category === "men" ? "active" : ""}`} href="#" onClick={() => setCategory("men")}>Men</a>
           </li>
           <li className="nav-item">
-            <a
-              className={`nav-link ${category === "women" ? "active" : ""}`}
-              href="#"
-              onClick={() => setCategory("women")}
-            >
-              Women
-            </a>
+            <a className={`nav-link ${category === "women" ? "active" : ""}`} href="#" onClick={() => setCategory("women")}>Women</a>
           </li>
         </ul>
       </div>
@@ -201,95 +163,47 @@ function Collection() {
         <div className="row">
           {/* Sidebar Filters */}
           <aside className="col-10 col-md-3 col-lg-2 border-end mb-3 mb-md-0 p-3">
-            <button
-              className="btn btn-outline-secondary w-100 mb-3 d-md-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#filterMenu"
-            >
-              Filters
-            </button>
+            <button className="btn btn-outline-secondary w-100 mb-3 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#filterMenu">Filters</button>
             <div className="collapse d-md-block" id="filterMenu">
               <h5 className="fw-bold mb-3">Filter By</h5>
-
               {/* Size */}
               <div className="mb-4">
                 <h6>Size</h6>
                 {["S", "M", "L", "XL"].map((size) => (
                   <div className="form-check" key={size}>
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id={`size-${size}`}
-                      checked={selectedSizes.includes(size)}
-                      onChange={() => toggleFilter(size, setSelectedSizes, selectedSizes)}
-                    />
-                    <label className="form-check-label" htmlFor={`size-${size}`}>
-                      {size}
-                    </label>
+                    <input className="form-check-input" type="checkbox" id={`size-${size}`} checked={selectedSizes.includes(size)} onChange={() => toggleFilter(size, setSelectedSizes, selectedSizes)} />
+                    <label className="form-check-label" htmlFor={`size-${size}`}>{size}</label>
                   </div>
                 ))}
               </div>
-
               {/* Color */}
               <div className="mb-4">
                 <h6>Color</h6>
-                {["Red", "Blue", "Green"].map((color) => (
+                {["pink", "Blue", "orange"].map((color) => (
                   <div className="form-check" key={color}>
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id={`color-${color}`}
-                      checked={selectedColors.includes(color)}
-                      onChange={() => toggleFilter(color, setSelectedColors, selectedColors)}
-                    />
-                    <label className="form-check-label" htmlFor={`color-${color}`}>
-                      {color}
-                    </label>
+                    <input className="form-check-input" type="checkbox" id={`color-${color}`} checked={selectedColors.includes(color)} onChange={() => toggleFilter(color, setSelectedColors, selectedColors)} />
+                    <label className="form-check-label" htmlFor={`color-${color}`}>{color}</label>
                   </div>
                 ))}
               </div>
-
               {/* Brand */}
               <div className="mb-4">
                 <h6>Brand</h6>
                 {["Nike", "Adidas", "Puma"].map((brand) => (
                   <div className="form-check" key={brand}>
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id={`brand-${brand}`}
-                      checked={selectedBrands.includes(brand)}
-                      onChange={() => toggleFilter(brand, setSelectedBrands, selectedBrands)}
-                    />
-                    <label className="form-check-label" htmlFor={`brand-${brand}`}>
-                      {brand}
-                    </label>
+                    <input className="form-check-input" type="checkbox" id={`brand-${brand}`} checked={selectedBrands.includes(brand)} onChange={() => toggleFilter(brand, setSelectedBrands, selectedBrands)} />
+                    <label className="form-check-label" htmlFor={`brand-${brand}`}>{brand}</label>
                   </div>
                 ))}
               </div>
-
               {/* Price */}
               <div className="mb-4">
                 <h6>Price Range</h6>
-                <input
-                  type="range"
-                  className="form-range w-100"
-                  min="0"
-                  max="500"
-                  value={priceRange}
-                  onChange={(e) => setPriceRange(e.target.value)}
-                />
+                <input type="range" className="form-range w-100" min="0" max="500" value={priceRange} onChange={(e) => setPriceRange(e.target.value)} />
                 <p className="small text-muted">Up to ${priceRange}</p>
               </div>
-
               {/* Reset Filters Button */}
-              <button
-                className="btn btn-danger w-100"
-                onClick={resetFilters}
-              >
-                Reset Filters
-              </button>
+              <button className="btn btn-danger w-100" onClick={resetFilters}>Reset Filters</button>
             </div>
           </aside>
 
@@ -300,26 +214,20 @@ function Collection() {
                 filteredProducts.map((product, index) => (
                   <div className="col" key={index}>
                     <div className="card h-100 text-center shadow-sm rounded-3">
-                      <img
-                        src={product.img[0]}
-                        className="card-img-top img-fluid"
-                        alt={product.name}
-                      />
+                      <img src={product.img[0]} className="card-img-top img-fluid" alt={product.name} />
                       <div className="card-body">
                         <h6 className="card-title text-truncate">{product.name}</h6>
                         <p className="text-muted mb-0">${product.price}.00</p>
-                        <button
+                      <button
                           className="btn btn-primary mt-2"
-                          onClick={() => addToCart(product)}
+                          onClick={() => {
+                            dispatch(addToCart(product));   
+                            alert(`${product.name} added to cart!`); 
+                          }}
                         >
                           Add to Cart
                         </button>
-                        <button
-                          className="btn btn-info mt-2 ms-2"
-                          onClick={() => viewProductDetails(product)}
-                        >
-                          View Details
-                        </button>
+                        <button className="btn btn-info mt-2 ms-2" onClick={() => viewProductDetails(product)}>View Details</button>
                       </div>
                     </div>
                   </div>
@@ -331,6 +239,33 @@ function Collection() {
           </section>
         </div>
       </main>
+
+      {/* Product Details Modal with Zoom */}
+      {showDetailsModal && selectedProduct && (
+        <div className="modal fade show" tabIndex="-1" style={{ display: "block" }} aria-hidden="true">
+          <div className="modal-dialog modal-lg">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">{selectedProduct.name}</h5>
+                <button type="button" className="btn-close" onClick={closeDetailsModal}></button>
+              </div>
+              <div className="modal-body">
+                <div className="text-center">
+                  <img
+                    src={selectedProduct.img[0]}
+                    className="img-fluid"
+                    alt={selectedProduct.name}
+                    style={{ cursor: "zoom-in" }}
+                    onClick={() => window.open(selectedProduct.img[0], "_blank")}  // Simple zoom effect
+                  />
+                </div>
+                <p>{selectedProduct.description}</p>
+                <p>Price: ${selectedProduct.price}.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

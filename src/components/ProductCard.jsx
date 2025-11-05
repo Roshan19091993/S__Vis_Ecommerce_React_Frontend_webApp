@@ -9,10 +9,10 @@ const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (e, product) => {
+    
     e.stopPropagation();
     e.preventDefault();
-    dispatch(addToCart(product));
-    alert("Product added successfully");
+    dispatch(addToCart(product)); 
     toast.success(`🛒 ${product.name} added to cart!`, { position: "top-center" });
   };
 
