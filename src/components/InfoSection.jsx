@@ -10,7 +10,7 @@ import {
 const InfoSection = () => {
   const infoItems = [
     {
-      icon: <FaShippingFast className="text-danger fs-2 mb-2" />,
+      icon: <FaShippingFast className="text-danger fs-4 mb-2" />,
       title: "Free Shipping",
       description: "Get your order delivered with no extra cost",
     },
@@ -37,7 +37,7 @@ const InfoSection = () => {
   ];
 
   return (
-    <div className="bg-white py-5">
+    <div className="bg-white py-1">
       <div className="container">
         <div className="row g-4 justify-content-center">
           {infoItems.map((item, index) => (
@@ -49,8 +49,8 @@ const InfoSection = () => {
               <div
                 className="text-center border rounded shadow-sm p-3 d-flex flex-column justify-content-center align-items-center"
                 style={{
-                  width: "150px",
-                  height: "150px",
+                  width: "200px",
+                  height: "180px",
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   cursor: "pointer",
                 }}
@@ -65,7 +65,7 @@ const InfoSection = () => {
                 }}
               >
                 {item.icon}
-                <h6 className="fw-semibold mt-2">{item.title}</h6>
+                <h6 className="fw-semibold mt-1">{item.title}</h6>
                 <p className="text-muted small mb-0">{item.description}</p>
               </div>
             </div>

@@ -35,6 +35,19 @@ const Order = ({ order }) => {
 
         <hr />
 
+        {/* Billing Information */}
+        <div className="mb-4">
+          <h5 className="text-secondary">Billing Information</h5>
+          <ul className="list-unstyled">
+            <li><strong>Name:</strong> {currentOrder.billingInformation?.name}</li>
+            <li><strong>Email:</strong> {currentOrder.billingInformation?.email}</li>
+            <li><strong>Phone:</strong> {currentOrder.billingInformation?.phone}</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        {/* Shipping Information */}
         <div className="mb-4">
           <h5 className="text-secondary">Shipping Information</h5>
           <ul className="list-unstyled">
@@ -46,6 +59,7 @@ const Order = ({ order }) => {
 
         <hr />
 
+        {/* Products Ordered */}
         <div className="mb-4">
           <h5 className="text-secondary">Products Ordered</h5>
           <ul className="list-group">
@@ -68,9 +82,6 @@ const Order = ({ order }) => {
         </div>
 
         <div className="d-flex justify-content-center gap-3 mt-4">
-          <button className="btn btn-outline-primary" onClick={() => navigate('/order-tracking')}>
-            Track Order
-          </button>
           <button className="btn btn-primary" onClick={() => navigate('/')}>
             Continue Shopping
           </button>

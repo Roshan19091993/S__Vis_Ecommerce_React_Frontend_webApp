@@ -1,17 +1,19 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 import {  useNavigate } from 'react-router-dom';
 import EmptyCart from "../assets/empty-cart-yellow.png";
 import { FaTrashAlt } from 'react-icons/fa';
 import ChangeAddress from '../components/ChangeAddress';
 import Modal from '../components/Modal';
 import { removeFromCart,increaseQuantity,decreaseQuantity } from '../redux/cartSlice';
+import { CategoryContext } from '../context/CategoryContext';
 const Cart = () => {
 
   const cart = useSelector(state => state.cart);
-  const [address,setAddress] =useState('main street,411110');
+ 
   const [isModalOpen, setIsModalOpen]=useState(false);
+  const {setAddress}=useContext(CategoryContext);
   const dispatch = useDispatch();
   const Navigate = useNavigate();
 
@@ -78,19 +80,7 @@ const Cart = () => {
                         <span>{cart.totalQuantity}</span>
                       </div>
 
-                      {/* Shipping Information Section */}
-                      <div className="mb-3">
-                        <p className="mb-1 fw-bold">Shipping:</p>
-                        <p className="mb-2">
-                          Shipping to: <span className="fw-bold">{address}</span>
-                        </p>
-                        <button
-                          className="btn btn-outline-primary btn-sm"
-                          onClick={() => setIsModalOpen(true)}
-                        >
-                          Change Address
-                        </button>
-                      </div>
+               
 
                       {/* Total Price Section */}
                       <div className="d-flex justify-content-between mb-4 border-top pt-3">

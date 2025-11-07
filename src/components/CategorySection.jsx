@@ -2,7 +2,7 @@ import React from "react";
 import ManCategory from "../assets/Categories/men/image3.jpg";
 import WomanCategory from "../assets/Categories/women/womenImg.webp";
 import KidsCategory from "../assets/Categories/Kids/kidsImg.jpg";
-
+import { Link } from "react-router-dom";
 const CategorySection = () => {
   const categories = [
     { title: "Men", imageUrl: ManCategory },
@@ -11,7 +11,7 @@ const CategorySection = () => {
   ];
 
   return (
-    <div className="container my-5">
+    <div className="container my-3">
       <div className="row g-4">
         {categories.map((category, index) => (
           <div className="col-12 col-sm-6 col-md-4" key={index}>
@@ -36,7 +36,11 @@ const CategorySection = () => {
                 }}
               >
                 <h4>{category.title}</h4>
-                <p className="fw-light">View All</p>
+                <p className="fw-light">
+                  <Link to="/collection">
+                     View All
+                  </Link>
+                  </p>
               </div>
             </div>
           </div>

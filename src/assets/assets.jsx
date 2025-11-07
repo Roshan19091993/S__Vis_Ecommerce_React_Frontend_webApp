@@ -32,22 +32,26 @@ import Image10 from "../assets/products/product10.webp";//men jackets
 
 
 // for girls
-import g1 from "../assets/ProjectImage/Dresses/Girls-HopscotchBrand/img1.jpg";//girls
-import g2 from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img2.jpg";//kids girls
-
+import g9 from "../assets/ProjectImage/Dresses/Girls-HopscotchBrand/img1.jpg";//girls
+import mainImage from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img1.jpg";//kids girls
+import g2 from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img2.jpg";
+import g3 from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img3.jpg";
+import g4 from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img4.jpg";
+import g5 from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img5.jpg";
 export const mockData = [
   {
     id: 1,
-    image: g1,
+    image: g9,
     name: "kids",
     price: 100,
   },
-  {
-    id: 2,
-    image: g2,
-    name: "jackets",
-    price: 150,
-  },
+{
+  id: 2,
+  image: [mainImage, g2, g3, g4, g5], 
+  name: "jackets",
+  price: 150,
+}
+,
   {
     id: 3,
     image: Image3,
@@ -95,7 +99,21 @@ export const mockData = [
     image: Image10,
     name: "Product 10",
     price: 550,
-  },{
+  }
+
+
+    
+];
+
+
+
+
+
+
+
+
+export const mockData1=[
+  {
 
     kids: {
         boys: [
@@ -196,99 +214,9 @@ export const mockData = [
     },
   ],
 
-  kids: {
-    boys: [
-      {
-        name: "Boys T-Shirt",
-        price: 18,
-        img: ["Image9.jpg"],  // Replace with actual image path
-        size: "M",
-        color: "Blue",
-        brand: "Nike",
-        description: "Cool T-shirt for boys, ideal for playtime.",
-      },
-      {
-        name: "Boys Shorts",
-        price: 22,
-        img: ["Image10.jpg"],  // Replace with actual image path
-        size: "L",
-        color: "Green",
-        brand: "Adidas",
-        description: "Comfortable shorts for outdoor activities.",
-      },
-      {
-        name: "Boys Sneakers",
-        price: 45,
-        img: ["Image11.jpg"],  // Replace with actual image path
-        size: "32",
-        color: "Red",
-        brand: "Puma",
-        description: "Stylish sneakers for everyday wear.",
-      },
-      {
-        name: "Boys Jacket",
-        price: 55,
-        img: ["Image12.jpg"],  // Replace with actual image path
-        size: "M",
-        color: "Black",
-        brand: "Under Armour",
-        description: "Warm jacket perfect for winter adventures.",
-      },
-    ],
-
-    girls: [
-      {
-        name: "Girls Dress",
-        price: 40,
-        img: ["Image13.jpg"],  // Replace with actual image path
-        size: "S",
-        color: "Pink",
-        brand: "H&M",
-        description: "Cute dress for girls, ideal for parties or casual wear.",
-      },
-      {
-        name: "Girls Leggings",
-        price: 18,
-        img: ["Image14.jpg"],  // Replace with actual image path
-        size: "M",
-        color: "Purple",
-        brand: "Nike",
-        description: "Comfortable leggings for everyday wear.",
-      },
-      {
-        name: "Girls Sandals",
-        price: 25,
-        img: ["Image15.jpg"],  // Replace with actual image path
-        size: "28",
-        color: "Gold",
-        brand: "Puma",
-        description: "Stylish sandals for girls, perfect for summer.",
-      },
-      {
-        name: "Girls Hoodie",
-        price: 35,
-        img: ["Image16.jpg"],  // Replace with actual image path
-        size: "L",
-        color: "Light Blue",
-        brand: "Adidas",
-        description: "Cozy hoodie to keep girls warm during the cooler months.",
-      },
-    ],
-  },
+ 
 }
-
-
-    
-];
-
-
-
-
-
-
-
-
-
+]
 
 
 

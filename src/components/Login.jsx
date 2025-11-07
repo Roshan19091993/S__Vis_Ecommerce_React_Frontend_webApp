@@ -10,7 +10,7 @@ const Login = ({  openSignUp  }) => {
 
   return (
     <div className="container d-flex align-items-center justify-content-center vh-100">
-      <div className="card shadow-lg p-4" style={{ maxWidth: "400px", width: "100%" }}>
+      <div className="card shadow-lg p-4" style={{ maxWidth: "400px", width: "60%" }}>
         <h2 className="text-center mb-4">Login</h2>
 
         <form onSubmit={handleSubmit}>

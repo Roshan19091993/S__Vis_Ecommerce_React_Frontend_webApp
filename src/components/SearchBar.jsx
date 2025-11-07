@@ -1,69 +1,83 @@
-// src/components/SearchBar.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setSearchTerm } from "../redux/productSlice";
+import { mockData } from "../assets/assets";
+import { useDispatch, useSelector } from "react-redux";
+import { setProducts } from "../redux/productSlice";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const filteredData = useSelector((state) => state.product.filteredData);
+  // ✅ Flatten and load mock data once into Redux
+  useEffect(() => {
+    const flattenData = [];
 
-  // Handle typing (live search)
-  const handleInputChange = (e) => {
-    setSearch(e.target.value);
-    dispatch(setSearchTerm(e.target.value));
+    mockData.forEach((item) => {
+      if (item.name) flattenData.push(item);
+      if (item.men) flattenData.push(...item.men);
+      if (item.women) flattenData.push(...item.women);
+      if (item.kids)
+        flattenData.push(...item.kids.boys, ...item.kids.girls);
+    });
+
+    dispatch(setProducts(flattenData));
+  }, [dispatch]);
+
+  // ✅ Filter live search
+  const filteredData = useSelector((state) =>
+    state.product.products.filter((product) =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    )
+  );
+
+  // ✅ Navigate to product details
+  const handleSelectProduct = (product) => {
+    setSearch(""); // clear search
+    navigate(`/product/${product.id}`); // open product page
   };
 
-  // Handle pressing Enter or clicking search icon
+  // ✅ Handle manual submit (e.g., pressing Enter)
   const handleSearch = (e) => {
     e.preventDefault();
     if (search.trim()) {
-      dispatch(setSearchTerm(search));
-      navigate("/filter-data"); // optional — goes to a filtered results page
+      navigate("/filter-data");
     }
-  };
-
-  
-  const handleSelectProduct = (product) => {
-    setSearch(""); 
-    dispatch(setSearchTerm("")); 
-    navigate(`/product/${product.id}`); 
   };
 
   return (
     <div style={{ position: "relative", width: "100%", maxWidth: "500px" }}>
+      {/* 🔍 Search input field */}
       <form onSubmit={handleSearch}>
         <div className="input-group">
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Search for products..."
             className="form-control border-end-0 rounded-start-pill ps-3 py-2"
             value={search}
-            onChange={handleInputChange}
+            onChange={(e) => setSearch(e.target.value)}
+            autoComplete="off"
           />
           <button
             type="submit"
-            className="btn btn-outline-secondary rounded-end-pill"
+            className="btn btn-outline-light rounded-end-pill"
           >
             <FaSearch />
           </button>
         </div>
       </form>
 
-      {/* === Suggestions Dropdown === */}
+      {/* 🔽 Dropdown suggestions */}
       {search && filteredData.length > 0 && (
         <ul
-          className="list-group position-absolute bg-white border border-1 rounded mt-1"
+          className="list-group position-absolute bg-white border mt-1 shadow-sm"
           style={{
             width: "100%",
             top: "100%",
             left: 0,
             zIndex: 10,
-            maxHeight: "200px",
+            maxHeight: "250px",
             overflowY: "auto",
           }}
         >
@@ -71,31 +85,31 @@ const SearchBar = () => {
             <li
               key={product.id}
               className="list-group-item d-flex align-items-center gap-2 py-2"
-              style={{
-                cursor: "pointer",
-                transition: "background-color 0.2s",
-              }}
-              onClick={() => handleSelectProduct(product)}
-              onMouseDown={(e) => e.preventDefault()} // prevent input blur before click
+              style={{ cursor: "pointer" }}
+              onMouseDown={(e) => e.preventDefault()} 
+              onClick={() => handleSelectProduct(product)} 
             >
-              {/* optional: show product image */}
-              {product.image && (
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  style={{ width: "35px", height: "35px", objectFit: "cover", borderRadius: "4px" }}
-                />
-              )}
+              {/* ✅ Product Image */}
+              <img
+                src={product.image || product.images?.[0]}
+                alt={product.name}
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  objectFit: "cover",
+                  borderRadius: "4px",
+                }}
+              />
               <span>{product.name}</span>
             </li>
           ))}
         </ul>
       )}
 
-      {/* Optional: No results message */}
+      {/* 🚫 No results */}
       {search && filteredData.length === 0 && (
         <div
-          className="position-absolute bg-white border rounded mt-1 px-3 py-2 text-muted small"
+          className="position-absolute bg-white border rounded mt-1 px-3 py-2 text-muted small shadow-sm"
           style={{
             width: "100%",
             top: "100%",
@@ -111,6 +125,3 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-
-
-
