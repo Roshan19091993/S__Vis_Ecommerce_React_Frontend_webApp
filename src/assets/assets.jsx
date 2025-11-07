@@ -50,6 +50,7 @@ export const mockData = [
   image: [mainImage, g2, g3, g4, g5], 
   name: "jackets",
   price: 150,
+
 }
 ,
   {
@@ -117,7 +118,7 @@ export const mockData1=[
 
     kids: {
         boys: [
-          { name: "Boys T-shirt", price: 25, img: [], size: "M", color: "Red", brand: "Nike", description: "Comfortable cotton t-shirt." },
+          { name: "Boys T-shirt", price: 25, img: [Image1], size: "M", color: "Red", brand: "Nike", description: "Comfortable cotton t-shirt." },
           { name: "Boys Jeans", price: 40, img: [Image2], size: "L", color: "Blue", brand: "Adidas", description: "Stylish denim jeans for boys." },
         ],
         girls: [

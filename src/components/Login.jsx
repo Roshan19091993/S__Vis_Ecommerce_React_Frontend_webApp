@@ -1,75 +1,55 @@
-import React from 'react';
+import React from "react";
 
-const Login = ({  openSignUp  }) => {
+const Login = ({ onClose, openSignUp }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add login logic here
     alert("Login Successful!");
+    if (onClose) onClose();
   };
 
   return (
-    <div className="container d-flex align-items-center justify-content-center vh-100">
-      <div className="card shadow-lg p-4" style={{ maxWidth: "400px", width: "60%" }}>
-        <h2 className="text-center mb-4">Login</h2>
+    <div className="card shadow-lg p-4 position-relative" style={{ maxWidth: "400px", width: "100%" }}>
+      {/* Close Button */}
+      <button
+        type="button"
+        className="btn-close position-absolute"
+        style={{
+          top: "10px",
+          right: "10px",
+          backgroundColor: "rgba(255,255,255,0.9)",
+          borderRadius: "50%",
+          padding: "8px",
+          transition: "background-color 0.2s ease",
+        }}
+        onClick={onClose}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#dc3545")}
+        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.9)")}
+      ></button>
 
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label fw-semibold">Email</label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              placeholder="Enter your email"
-              required
-              autoFocus
-            />
-          </div>
+      <h2 className="text-center mb-4 mt-2">Login</h2>
 
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label fw-semibold">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              placeholder="Enter your password"
-              required
-            />
-          </div>
-
-          <div className="d-flex justify-content-between align-items-center mb-3">
-            <div className="form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="remember"
-              />
-              <label htmlFor="remember" className="form-check-label">
-                Remember Me
-              </label>
-            </div>
-            <a href="#" className="text-decoration-none small text-primary">
-              Forgot Password?
-            </a>
-          </div>
-
-          <div className="d-grid mb-3">
-            <button type="submit" className="btn btn-primary">
-              Login
-            </button>
-          </div>
-        </form>
-
-        <div className="text-center mt-3">
-          <span className="me-2">Don’t have an account?</span>
-          <button
-            className="btn btn-outline-primary btn-sm"
-            aria-label="Open Sign Up Modal"
-            onClick={(e) => { e.preventDefault();  openSignUp() ; }}
-          >
-            Sign Up
-          </button>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label fw-semibold">Email</label>
+          <input type="email" className="form-control" id="email" placeholder="Enter your email" required autoFocus />
         </div>
+
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label fw-semibold">Password</label>
+          <input type="password" className="form-control" id="password" placeholder="Enter your password" required />
+        </div>
+
+        <div className="d-grid mb-3">
+          <button type="submit" className="btn btn-primary">Login</button>
+        </div>
+      </form>
+
+      <div className="text-center mt-3">
+        <span className="me-2">Don’t have an account?</span>
+        <button className="btn btn-outline-primary btn-sm" onClick={openSignUp}>
+          Sign Up
+        </button>
       </div>
     </div>
   );

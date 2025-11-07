@@ -67,7 +67,7 @@ const Home = () => {
                   src={banner}
                   className="d-block w-100"
                   alt={`Banner ${index + 1}`}
-                  style={{ maxHeight: "350px", objectFit: "cover" }}
+                  style={{ maxHeight: "400px", objectFit: "cover" }}
                 />
                 <div className="carousel-caption text-start">
                   <h3 className="fw-bold text-light">
