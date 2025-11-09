@@ -344,7 +344,7 @@ const Navbar = () => {
             style={{ marginLeft: "70px" }}
           >
             <img
-              src={assets.logo_img}
+               src={assets.logo_img}
               alt="logo"
               className="rounded-circle border border-3 border-white shadow-sm"
               style={{

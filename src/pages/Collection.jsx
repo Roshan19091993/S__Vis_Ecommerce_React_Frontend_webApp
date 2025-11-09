@@ -1,3 +1,6 @@
+
+
+
 import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { toast } from "react-toastify";
@@ -6,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import { CategoryContext } from "../context/CategoryContext";
 import { useNavigate } from "react-router-dom";
-import { mockData1, mockData } from "../assets/assets";
+import { mockData } from "../assets/assets";
 
 function Collection() {
   const {
@@ -34,37 +37,29 @@ function Collection() {
     setSelectedBrands([]);
     setSelectedColors([]);
     setSelectedSizes([]);
-    setPriceRange(500); // max price
+    setPriceRange(500);
   };
 
-  // Get filtered products
+  // Get unique subcategories dynamically for the selected category
+  const getSubcategories = () => {
+    if (!category) return [];
+    const subs = mockData
+      .filter((p) => p.category === category && p.subcategory)
+      .map((p) => p.subcategory);
+    return [...new Set(subs)];
+  };
+
+  // Filter products
   const getFilteredProducts = () => {
-    let list = [];
+    let list = [...mockData];
 
-    if (category === "kids") {
-      list = subcategory
-        ? mockData1[0].kids[subcategory] || []
-        : [...mockData1[0].kids.boys, ...mockData1[0].kids.girls];
-    } else if (category === "men") {
-      list = mockData1[0].men || [];
-    } else if (category === "women") {
-      list = mockData1[0].women || [];
-    } else {
-      // All products
-    list = [
-  ...(mockData1[0]?.kids?.boys || []),
-  ...(mockData1[0]?.kids?.girls || []),
-  ...(mockData1[0]?.men || []),
-  ...(mockData1[0]?.women || []),
-  ...(mockData[0]?.kids?.boys || []),
-  ...(mockData[0]?.kids?.girls || []),
-  ...(mockData[0]?.men || []),
-  ...(mockData[0]?.women || []),
-].filter(Boolean); // removes undefined
-
+    if (category) {
+      list = list.filter((p) => p.category === category);
+      if (subcategory) {
+        list = list.filter((p) => p.subcategory === subcategory);
+      }
     }
 
-    // Apply filters
     return list.filter((p) => {
       const sizeMatch = selectedSizes.length ? selectedSizes.includes(p.size) : true;
       const colorMatch = selectedColors.length ? selectedColors.includes(p.color) : true;
@@ -98,15 +93,21 @@ function Collection() {
           <select
             className="form-select mb-3"
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => {
+              setCategory(e.target.value);
+              setSubcategory(""); // reset subcategory on category change
+            }}
           >
             <option value="">All</option>
-            <option value="kids">Kids</option>
-            <option value="men">Men</option>
-            <option value="women">Women</option>
+            {[...new Set(mockData.map((p) => p.category))].map((cat) => (
+              <option key={cat} value={cat}>
+                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              </option>
+            ))}
           </select>
 
-          {category === "kids" && (
+          {/* Dynamic Subcategory */}
+          {getSubcategories().length > 0 && (
             <>
               <h6>Subcategory</h6>
               <select
@@ -115,12 +116,16 @@ function Collection() {
                 onChange={(e) => setSubcategory(e.target.value)}
               >
                 <option value="">All</option>
-                <option value="boys">Boys</option>
-                <option value="girls">Girls</option>
+                {getSubcategories().map((sub) => (
+                  <option key={sub} value={sub}>
+                    {sub.charAt(0).toUpperCase() + sub.slice(1)}
+                  </option>
+                ))}
               </select>
             </>
           )}
 
+          {/* Sizes */}
           <h6>Sizes</h6>
           {["S", "M", "L", "XL"].map((size) => (
             <div className="form-check" key={size}>
@@ -134,8 +139,9 @@ function Collection() {
             </div>
           ))}
 
+          {/* Colors */}
           <h6>Colors</h6>
-          {["Red", "Blue", "Green", "Black", "White"].map((color) => (
+          {["Red", "Blue", "Black", "White","pink","purple","Orange"].map((color) => (
             <div className="form-check" key={color}>
               <input
                 type="checkbox"
@@ -147,8 +153,9 @@ function Collection() {
             </div>
           ))}
 
+          {/* Brands */}
           <h6>Brands</h6>
-          {["Nike", "Adidas", "Puma", "Reebok"].map((brand) => (
+          {[...new Set(mockData.map((p) => p.brand))].map((brand) => (
             <div className="form-check" key={brand}>
               <input
                 type="checkbox"
@@ -178,31 +185,28 @@ function Collection() {
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product, index) => (
                 <div className="col" key={product.id || index}>
-                  <div className="card h-100 text-center shadow-sm rounded-3">
+                  <div
+                    className="card h-100 text-center shadow-sm rounded-3"
+                    style={{ cursor: "pointer" }}
+                    onClick={() =>
+                      navigate(`/product/${product.id || index}`, {
+                        state: { product, selectedImage: 0 },
+                      })
+                    }
+                  >
                     <div className="card-img-top img-fluid">
                       {product.img && product.img.length > 0 ? (
-                        <div className="d-flex gap-1 flex-wrap justify-content-center">
-                          {product.img.map((image, idx) => (
-                            <img
-                              key={idx}
-                              src={image}
-                              alt={`${product.name} ${idx + 1}`}
-                              style={{
-                                width: "200px",
-                                height: "200px",
-                                objectFit: "cover",
-                                cursor: "pointer",
-                                border: "1px solid #ddd",
-                                borderRadius: "4px",
-                              }}
-                              onClick={() =>
-                                navigate(`/product/${product.id || index}`, {
-                                  state: { product, selectedImage: idx },
-                                })
-                              }
-                            />
-                          ))}
-                        </div>
+                        <img
+                          src={product.img[0]}
+                          alt={product.name}
+                          style={{
+                            width: "200px",
+                            height: "200px",
+                            objectFit: "cover",
+                            border: "1px solid #ddd",
+                            borderRadius: "4px",
+                          }}
+                        />
                       ) : (
                         <img src="/images/default.jpg" alt={product.name} />
                       )}
@@ -213,7 +217,8 @@ function Collection() {
                       <p className="text-muted mb-0">${product.price}.00</p>
                       <button
                         className="btn btn-danger mt-2"
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.stopPropagation();
                           dispatch(addToCart(product));
                           toast.success(`🛒 ${product.name} added to cart!`, {
                             position: "top-center",

@@ -162,7 +162,7 @@ const Contact = () => {
           <strong>Email:</strong> support@funckyshop.com
         </p>
         <p>
-          <strong>Address:</strong> india dist nagpur ,Hingna  441110
+          <strong>Address:</strong> india dist nagpur ,Hingna-441110
         </p>
       </div>
     </div>

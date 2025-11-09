@@ -26,11 +26,14 @@ const SearchBar = () => {
   }, [dispatch]);
 
   // ✅ Filter live search
-  const filteredData = useSelector((state) =>
-    state.product.products.filter((product) =>
-      product.name.toLowerCase().includes(search.toLowerCase())
-    )
-  );
+      const filteredData = useSelector((state) =>
+        (state.product.products || []).filter(
+          (product) =>
+            product?.name &&
+            product.name.toLowerCase().includes((search || "").toLowerCase())
+        )
+      );
+
 
   // ✅ Navigate to product details
   const handleSelectProduct = (product) => {

@@ -1,4 +1,4 @@
-import  logo_img from '../assets/Logo/Logo.jpg';
+import  logo_img from './Logo/Logo.jpg';
 export const assets={
     logo_img,
     // support_img,
@@ -18,92 +18,115 @@ export const Categories=[
 ]
 
 
+//girls Dress Red
+import g1 from "./Gimg1.jpg";
+import g2 from "./Gimg2.jpg";
+import g3 from "./Gimg3.jpg";
+import g4 from "./Gimg4.jpg";
+import g5 from "./Gimg5.jpg";
 
-import Image1 from "../assets/products/product1.jpg";//mens shorts
-import Image2 from "../assets/products/product2.jpg";//xl tshirts men
-import Image3 from "../assets/products/product3.jpg";//men shirts
-import Image4 from "../assets/products/product4.webp";//men shirts
-import Image5 from "../assets/products/product5.webp";//men blezzer
-import Image6 from "../assets/products/product6.webp";//men 
-import Image7 from "../assets/products/product7.webp";//women dress
-import Image8 from "../assets/products/product8.webp";//women
-import Image9 from "../assets/products/product9.webp";//jents pant
-import Image10 from "../assets/products/product10.webp";//men jackets
+//girls top orange
+import Gt1 from "../assets/Categories/Kids/gt1.jpg";
+import Gt2 from "../assets/Categories/Kids/gt2.jpg";
+import Gt3 from "../assets/Categories/Kids/gt3.jpg";
+import Gt4 from "../assets/Categories/Kids/gt4.jpg";
 
 
-// for girls
-import g9 from "../assets/ProjectImage/Dresses/Girls-HopscotchBrand/img1.jpg";//girls
-import mainImage from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img1.jpg";//kids girls
-import g2 from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img2.jpg";
-import g3 from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img3.jpg";
-import g4 from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img4.jpg";
-import g5 from "../assets/ProjectImage/Jackets/Kids/Girls/Roxfid-brand/img5.jpg";
+//Boys T-shirts
+import Ts1 from "../assets/Categories/Kids/Tshirts1.jpg";
+import Ts2 from "../assets/Categories/Kids/Tshirts2.jpg";
+import Ts3 from "../assets/Categories/Kids/Tshirts3.jpg";
+import Ts4 from "../assets/Categories/Kids/Tshirts4.jpg";
+
+//BoysPants  blue
+import Bt1 from "../assets/Categories/Kids/boysPants1.jpg";
+import Bt2 from "../assets/Categories/Kids/boysPants2.jpg";
+import Bt3 from "../assets/Categories/Kids/boysPants3.jpg";
+import Bt4 from "../assets/Categories/Kids/boysPants4.jpg";
+
+
+//women dress pink
+import p1 from "../assets/Categories/women/pink1.webp";
+import p2 from "../assets/Categories/women/pink2.jpg";
+import p3 from "../assets/Categories/women/pink3.jpg";
+import p4 from "../assets/Categories/women/pink4.avif";
+//
+
+//women jacket blue
+import bl1 from "../assets/Categories/women/jacket1.jpg";
+import bl2 from "../assets/Categories/women/jacket2.jpg";
+import bl3 from "../assets/Categories/women/jacket3.jpg";
+import bl4 from "../assets/Categories/women/jacket4.jpg";
+
+//women pants
+
+import pa1 from "../assets/Categories/women/whitePants1.jpg";
+import pa2 from  "../assets/Categories/women/whitePants2.jpg";
+import pa3 from "../assets/Categories/women/whitePants3.jpg";
+import pa4 from  "../assets/Categories/women/whitePants4.jpg"
+
+//women sweater
+import s1 from "../assets/Categories/women/sweater1.jpg";
+import s2 from "../assets/Categories/women/sweater2.jpg";
+import s3 from "../assets/Categories/women/sweater3.jpg";
+import s4 from "../assets/Categories/women/sweater4.jpg";
+import s5 from "../assets/Categories/women/sweater5.jpg";
+import s6 from "../assets/Categories/women/sweater6.jpg";
+
+
+
+//mens Jeans levis
+import Lj1 from "../assets/Categories/men/Levis1.webp";
+import Lj2 from "../assets/Categories/men/Levis2.webp";
+import Lj3 from "../assets/Categories/men/Levis3.webp";
+import Lj4 from "../assets/Categories/men/Levis4.webp";
+import Lj5 from "../assets/Categories/men/Levis5.webp";
+
+
+//mens puma t-shirts black
+import Pt1 from "../assets/Categories/men/Puma1.avif";
+import Pt2 from "../assets/Categories/men/Puma2.avif";
+import Pt3 from "../assets/Categories/men/Puma3.avif";
+import Pt4 from "../assets/Categories/men/Puma4.avif";
+import Pt5 from "../assets/Categories/men/Puma5.avif";
+
+//Mens shirts Red AllenSolley
+
+import Al1 from "../assets/Categories/men/AllenSolley (1).jpg";
+import Al2 from "../assets/Categories/men/AllenSolley (2).jpg";
+import Al3 from "../assets/Categories/men/AllenSolley (3).jpg";
+import Al4 from "../assets/Categories/men/AllenSolley (4).jpg";
+import Al5 from "../assets/Categories/men/AllenSolley (5).jpg";
+
+
+//Mens jacket white
+
+import J1 from "../assets/Categories/men/MenJacket1.jpg";
+import J2 from "../assets/Categories/men/MenJacket2.jpg";
+import J3 from "../assets/Categories/men/MenJacket3.jpg";
+import J4 from "../assets/Categories/men/MenJacket4.jpg";
+import J5 from "../assets/Categories/men/MenJacket5.jpg";
+
+
+
 export const mockData = [
-  {
-    id: 1,
-    image: g9,
-    name: "kids",
-    price: 100,
-  },
-{
-  id: 2,
-  image: [mainImage, g2, g3, g4, g5], 
-  name: "jackets",
-  price: 150,
+  // --- WOMEN ---
+  { id: 1, category: "women", name: "Women Dress", price: 45, img: [p1,p2,p3,p4], size: "M", color: "pink", brand: "AllenSolley", description: "Stylish women’s medi dress." },
+  { id: 2, category: "women", name: "Women Pants", price: 30, img: [pa1,pa2,pa3,pa4], size: "S", color: "White", brand: "Nike", description: "Fashionable pants for women." },
+  { id: 3, category: "women", name: "Women Jacket", price: 60, img: [bl1,bl2,bl3,bl4], size: "L", color: "Blue", brand: "Adidas", description: "Warm and stylish jacket." },
+  { id: 4, category: "women", name: "Women Sweater", price: 35, img: [s1,s2,s3,s4,s5,s6], size: "M", color: "purple", brand: "H&M", description: "Elegant ." },
 
-}
-,
-  {
-    id: 3,
-    image: Image3,
-    name: "kurta",
-    price: 200,
-  },
-  {
-    id: 4,
-    image: Image4,
-    name: "shirts",
-    price: 250,
-  },
-  {
-    id: 5,
-    image: Image5,
-    name: "blezzers",
-    price: 300,
-  },
-  {
-    id: 6,
-    image: Image6,
-    name: "Product 6",
-    price: 350,
-  },
-  {
-    id: 7,
-    image: Image7,
-    name: "Product 7",
-    price: 400,
-  },
-  {
-    id: 8,
-    image: Image8,
-    name: "Product 8",
-    price: 450,
-  },
-  {
-    id: 9,
-    image: Image9,
-    name: "Product 9",
-    price: 500,
-  },
-  {
-    id: 10,
-    image: Image10,
-    name: "Product 10",
-    price: 550,
-  }
+  // --- MEN ---
+  { id: 5, category: "men", name: "Men shirts", price: 50, img: [Al1,Al2,Al3,Al4,Al5], size: "L", color: "Red", brand: "AllenSolley", description: "Stylish men red shirts ." },
+  { id: 6, category: "men", name: "Men T-Shirt", price: 25, img: [Pt1,Pt2,Pt3,Pt4,Pt5], size: "M", color: "Black", brand: "puma", description: "Basic T-shirt." },
+  { id: 7, category: "men", name: "Men Jeans", price: 60, img: [Lj1,Lj2,Lj3,Lj4,Lj5], size: "34", color: "Blue", brand: "Levi's", description: "Classic fit jeans." },
+  { id: 8, category: "men", name: "Men Jacket", price: 80, img: [J1,J2,J3,J4,J5], size: "XL", color: "White", brand: "Nike", description: "Stylish winter jacket." },
 
-
-    
+  // --- KIDS ---
+  { id: 9, category: "kids", subcategory: "boys", name: "Boys T-shirt", price: 25, img: [Ts1,Ts2,Ts3,Ts4], size: "M", color: "Orange,Red,Blue,Yellow", brand: "Nike", description: "Cotton T-shirt for boys." },
+  { id: 10, category: "kids", subcategory: "boys", name: "Boys Pants", price: 40, img: [Bt1,Bt2,Bt3,Bt4], size: "L", color: "Blue", brand: "Adidas", description: "Denim jeans for boys." },
+  { id: 11, category: "kids", subcategory: "girls", name: "Girls Dress", price: 30, img: [g1, g2, g3, g4,g5], size: "S", color: "Red", brand: "Puma", description: "Elegant dress for girls." },
+  { id: 12, category: "kids", subcategory: "girls", name: "Girls Top", price: 20, img: [Gt1,Gt2,Gt3,Gt4], size: "M", color: "Orange", brand: "Nike", description: "Stylish top for girls." }
 ];
 
 
@@ -113,111 +136,38 @@ export const mockData = [
 
 
 
-export const mockData1=[
-  {
 
-    kids: {
-        boys: [
-          { name: "Boys T-shirt", price: 25, img: [Image1], size: "M", color: "Red", brand: "Nike", description: "Comfortable cotton t-shirt." },
-          { name: "Boys Jeans", price: 40, img: [Image2], size: "L", color: "Blue", brand: "Adidas", description: "Stylish denim jeans for boys." },
-        ],
-        girls: [
-          { name: "Girls Dress", price: 30, img: [Image1], size: "S", color: "Green", brand: "Puma", description: "Elegant dress for girls." },
-          { name: "Girls Top", price: 20, img: [g2], size: "M", color: "Red", brand: "Nike", description: "Stylish top for girls." },
-        ],
-      },
-      men: [
-        { name: "Men Shirt", price: 35, img: [Image1], size: "L", color: "Blue", brand: "Nike", description: "A classic men’s shirt." },
-        { name: "Men Pants", price: 50, img: [Image2], size: "XL", color: "Green", brand: "Adidas", description: "Comfortable pants for men." },
-      ],
-      women: [
-        { name: "Women Dress", price: 45, img: [Image3], size: "M", color: "Red", brand: "Puma", description: "Stylish women’s dress." },
-        { name: "Women Top", price: 30, img: [Image1], size: "S", color: "Blue", brand: "Nike", description: "Fashionable top for women." },
-      ],
-    }
-    ,{
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export const mockData1=[
+//   {
+
+   
+//       men: [
+//         { name: "Men Shirt", price: 35, img: [Image1], size: "L", color: "Blue", brand: "Nike", description: "A classic men’s shirt." },
+//         { name: "Men Pants", price: 50, img: [Image2], size: "XL", color: "Green", brand: "Adidas", description: "Comfortable pants for men." },
+//       ],
+//       women: [
+//         { name: "Women Dress", price: 45, img: [Image3], size: "M", color: "Red", brand: "Puma", description: "Stylish women’s dress." },
+//         { name: "Women Top", price: 30, img: [Image1], size: "S", color: "Blue", brand: "Nike", description: "Fashionable top for women." },
+//       ],
+//     }
+//     ,{
       
-  women: [
-    {
-      name: "Women Dress",
-      price: 45,
-      img: ["Image3.jpg"],  // Replace with actual image path
-      size: "M",
-      color: "Red",
-      brand: "Puma",
-      description: "Stylish women’s dress, perfect for casual outings.",
-    },
-    {
-      name: "Women Top",
-      price: 30,
-      img: ["Image1.jpg"],  // Replace with actual image path
-      size: "S",
-      color: "Blue",
-      brand: "Nike",
-      description: "Fashionable top for women, ideal for workout or casual wear.",
-    },
-    {
-      name: "Women Jacket",
-      price: 60,
-      img: ["Image2.jpg"],  // Replace with actual image path
-      size: "L",
-      color: "Black",
-      brand: "Adidas",
-      description: "Warm and stylish jacket for the winter season.",
-    },
-    {
-      name: "Women Skirt",
-      price: 35,
-      img: ["Image4.jpg"],  // Replace with actual image path
-      size: "M",
-      color: "Green",
-      brand: "H&M",
-      description: "Elegant skirt for work or casual occasions.",
-    },
-  ],
-  
-  men: [
-    {
-      name: "Men Hoodie",
-      price: 50,
-      img: ["Image5.jpg"],  // Replace with actual image path
-      size: "L",
-      color: "Gray",
-      brand: "Nike",
-      description: "Comfortable hoodie for everyday wear or sports.",
-    },
-    {
-      name: "Men T-Shirt",
-      price: 25,
-      img: ["Image6.jpg"],  // Replace with actual image path
-      size: "M",
-      color: "Black",
-      brand: "Adidas",
-      description: "Basic T-shirt, perfect for casual outings.",
-    },
-    {
-      name: "Men Jeans",
-      price: 60,
-      img: ["Image7.jpg"],  // Replace with actual image path
-      size: "34",
-      color: "Blue",
-      brand: "Levi's",
-      description: "Classic fit jeans, perfect for any occasion.",
-    },
-    {
-      name: "Men Jacket",
-      price: 80,
-      img: ["Image8.jpg"],  // Replace with actual image path
-      size: "XL",
-      color: "Brown",
-      brand: "Zara",
-      description: "Stylish jacket to stay warm during the winter.",
-    },
-  ],
-
  
-}
-]
+// }
+// ]
 
 
 
@@ -244,7 +194,16 @@ export const mockData1=[
 
 
 
-
+// import Image1 from "./products/product1.jpg";//mens shorts
+// import Image2 from "./products/product2.jpg";//xl tshirts men
+// import Image3 from "./products/product3.jpg";//men shirts
+// import Image4 from "./products/product4.webp";//men shirts
+// import Image5 from "./products/product5.webp";//men blezzer
+// import Image6 from "./products/product6.webp";//men 
+// import Image7 from "./products/product7.webp";//women dress
+// import Image8 from "./products/product8.webp";//women
+// import Image9 from "./products/product9.webp";//jents pant
+// import Image10 from "./products/product10.webp";//men jackets
 
 
 

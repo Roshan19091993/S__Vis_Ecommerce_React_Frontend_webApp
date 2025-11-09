@@ -51,8 +51,8 @@ const Order = ({ order }) => {
         <div className="mb-4">
           <h5 className="text-secondary">Shipping Information</h5>
           <ul className="list-unstyled">
-            <li><strong>Address:</strong> {currentOrder.shippingInformation?.address}</li>
             <li><strong>City:</strong> {currentOrder.shippingInformation?.city}</li>
+            <li><strong>State:</strong> {currentOrder.shippingInformation?.state}</li>
             <li><strong>Pin Code:</strong> {currentOrder.shippingInformation?.pincode}</li>
           </ul>
         </div>
@@ -92,3 +92,6 @@ const Order = ({ order }) => {
 };
 
 export default Order;
+
+
+

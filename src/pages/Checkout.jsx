@@ -16,8 +16,8 @@ const Checkout = ({ setOrder }) => {
     phone: ''
   });
   const [shippingInfo, setShippingInfo] = useState({
-    address: '',
     city: '',
+    state:'',
     pincode: ''
   });
 
@@ -34,8 +34,8 @@ const Checkout = ({ setOrder }) => {
     !billingInfo.name.trim() ||
     !billingInfo.email.trim() ||
     !billingInfo.phone.trim() ||
-    !shippingInfo.address.trim() ||
     !shippingInfo.city.trim() ||
+    !shippingInfo.state.trim() ||
     !shippingInfo.pincode.trim()
   ) {
     alert('Please fill out all required fields before placing the order.');
@@ -136,30 +136,30 @@ const Checkout = ({ setOrder }) => {
 
               <div className={`card-body ${shippingToggle ? '' : 'd-none'}`}>
                 <div className='mb-3'>
-                  <label className='form-label'>Address</label>
+                  <label className='form-label'>City</label>
                   <input
                     type='text'
                     className='form-control'
                     placeholder='Enter Address'
-                    value={shippingInfo.address}
+                    value={shippingInfo.city}
                     onChange={(e) =>
                       setShippingInfo({
                         ...shippingInfo,
-                        address: e.target.value,
+                        city: e.target.value,
                       })
                     }
                     required
                   />
                 </div>
                 <div className='mb-3'>
-                  <label className='form-label'>City</label>
+                  <label className='form-label'>State</label>
                   <input
                     type='text'
                     className='form-control'
                     placeholder='Enter City'
-                    value={shippingInfo.city}
+                    value={shippingInfo.state}
                     onChange={(e) =>
-                      setShippingInfo({ ...shippingInfo, city: e.target.value })
+                      setShippingInfo({ ...shippingInfo, state: e.target.value })
                     }
                     required
                   />
