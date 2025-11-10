@@ -1,17 +1,6 @@
 {
   "users": [
-    {
-      "id": "1",
-      "username": "john",
-      "email": "john@example.com",
-      "password": "12345"
-    },
-    {
-      "id": "2",
-      "username": "sara",
-      "email": "sara@example.com",
-      "password": "abcde"
-    },
+
     {
       "id": "5e37",
       "username": "akshay gawali",
@@ -23,6 +12,18 @@
       "username": "ashish ade",
       "email": "ashishad23@gmail.com",
       "password": "ashish@143"
+    },
+    {
+      "id": "6d01",
+      "username": "tejas lokhande",
+      "email": "tejas45@gmail.com",
+      "password": "tejas@45"
+    },
+    {
+      "id": "d66f",
+      "username": "pratik Raut",
+      "email": "pratikRaut9545@gmail.com",
+      "password": "pratik@9545"
     }
   ]
 }

@@ -1,5 +1,5 @@
   import {BrowserRouter,Router, Routes,Route } from "react-router-dom";
-  import { useState } from "react";
+  import { useContext, useState } from "react";
   import Navbar from "./components/Navbar";
  import Footer from "./components/Footer";
   import Home from "./pages/Home";
@@ -20,16 +20,17 @@ import { useDispatch } from "react-redux";
 import { setProducts } from "./redux/productSlice";
 import { mockData } from "./assets/assets";
 
-import { CategoryProvider } from "./context/CategoryContext";
+import { CategoryProvider } from "./context/CategoryContext.jsx";
 import Register from "./components/Register";
 import Login from "./components/Login";
 
   function App() {
     
+
       const dispatch = useDispatch();
 
      useEffect(() => {
-        dispatch(setProducts(mockData)); // ✅ loads all mock products
+        dispatch(setProducts(mockData)); 
   }   , [dispatch]);
 
     const [order, setOrder]=useState(null);
@@ -41,7 +42,10 @@ import Login from "./components/Login";
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/collection' element={<Collection />} />
-          <Route path='/cart' element={<Cart />} />
+            <Route
+            path="/cart"
+            element={<Cart  />}
+          />
           <Route path='/checkout' element={<Checkout setOrder={setOrder} />} />
           <Route path='/order-confirmation' element={<Order order={order} />} />
           <Route path='/filter-data' element={<FilterData />} />
@@ -51,6 +55,7 @@ import Login from "./components/Login";
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
         </Routes>
+       
         <Footer />
       </CategoryProvider>
 

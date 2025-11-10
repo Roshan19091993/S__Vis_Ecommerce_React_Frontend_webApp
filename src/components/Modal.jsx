@@ -59,6 +59,27 @@
 // export default Modal;
 
 // Modal.jsx
+// import React from "react";
+
+// const Modal = ({ isModalOpen, setIsModalOpen, children }) => {
+//   if (!isModalOpen) return null;
+
+//   return (
+//     <div
+//       className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+//       style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: 1050 }}
+//       onClick={(e) => {
+//         if (e.target === e.currentTarget) setIsModalOpen(false); // Close if clicked outside
+//       }}
+//     >
+//       <div>{children}</div>
+//     </div>
+//   );
+// };
+
+// export default Modal;
+
+
 import React from "react";
 
 const Modal = ({ isModalOpen, setIsModalOpen, children }) => {
@@ -68,9 +89,7 @@ const Modal = ({ isModalOpen, setIsModalOpen, children }) => {
     <div
       className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
       style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: 1050 }}
-      onClick={(e) => {
-        if (e.target === e.currentTarget) setIsModalOpen(false); // Close if clicked outside
-      }}
+      onClick={(e) => e.target === e.currentTarget && setIsModalOpen(false)}
     >
       <div>{children}</div>
     </div>

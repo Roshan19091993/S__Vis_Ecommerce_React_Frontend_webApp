@@ -14,11 +14,10 @@ import { CategoryContext } from "../context/CategoryContext";
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(true);
   const [loggedUser, setLoggedUser] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const { category, setCategory, subcategory, setSubcategory } =
+  const { category, setCategory, subcategory, setSubcategory,isLogin,setIsLogin,isLoginModalOpen,setIsLoginModalOpen } =
     useContext(CategoryContext);
   const navigate = useNavigate();
   const products = useSelector((state) => state.cart.products || []);

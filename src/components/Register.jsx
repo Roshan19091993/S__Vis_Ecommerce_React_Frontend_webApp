@@ -114,7 +114,7 @@ const Register = ({ onClose, openLogin }) => {
           />
         </div>
 
-        <div className="mb-3">
+      <div className="mb-3">
           <label htmlFor="password" className="form-label fw-semibold">
             Password
           </label>
@@ -123,16 +123,14 @@ const Register = ({ onClose, openLogin }) => {
             className="form-control"
             id="password"
             required
+            minLength={8}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
         <div className="mb-3">
-          <label
-            htmlFor="confirmPassword"
-            className="form-label fw-semibold"
-          >
+          <label htmlFor="confirmPassword" className="form-label fw-semibold">
             Confirm Password
           </label>
           <input
@@ -140,10 +138,12 @@ const Register = ({ onClose, openLogin }) => {
             className="form-control"
             id="confirmPassword"
             required
+            minLength={8}
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
+
 
         {error && <p className="text-danger small">{error}</p>}
 

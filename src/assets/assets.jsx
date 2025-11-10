@@ -124,7 +124,7 @@ export const mockData = [
 
   // --- KIDS ---
   { id: 9, category: "kids", subcategory: "boys", name: "Boys T-shirt", price: 25, img: [Ts1,Ts2,Ts3,Ts4], size: "M", color: "Orange,Red,Blue,Yellow", brand: "Nike", description: "Cotton T-shirt for boys." },
-  { id: 10, category: "kids", subcategory: "boys", name: "Boys Pants", price: 40, img: [Bt1,Bt2,Bt3,Bt4], size: "L", color: "Blue", brand: "Adidas", description: "Denim jeans for boys." },
+  { id: 10, category: "kids", subcategory: "boys", name: "Boys Pants", price: 40, img: [Bt1,Bt2,Bt3,Bt4], size: "L", color: "Blue", brand: "Denim", description: "Denim jeans for boys." },
   { id: 11, category: "kids", subcategory: "girls", name: "Girls Dress", price: 30, img: [g1, g2, g3, g4,g5], size: "S", color: "Red", brand: "Puma", description: "Elegant dress for girls." },
   { id: 12, category: "kids", subcategory: "girls", name: "Girls Top", price: 20, img: [Gt1,Gt2,Gt3,Gt4], size: "M", color: "Orange", brand: "Nike", description: "Stylish top for girls." }
 ];
