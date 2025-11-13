@@ -82,7 +82,7 @@ const Order = ({ order }) => {
         </div>
 
         <div className="d-flex justify-content-center gap-3 mt-4">
-          <button className="btn btn-primary" onClick={() => navigate('/')}>
+          <button className="btn btn-primary" onClick={() => navigate('/collection')}>
             Continue Shopping
           </button>
         </div>

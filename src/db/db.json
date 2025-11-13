@@ -1,6 +1,5 @@
 {
   "users": [
-
     {
       "id": "5e37",
       "username": "akshay gawali",
@@ -24,6 +23,12 @@
       "username": "pratik Raut",
       "email": "pratikRaut9545@gmail.com",
       "password": "pratik@9545"
+    },
+    {
+      "id": "3720",
+      "username": "Rahul Rajput",
+      "email": "rahulrajput1993@gmail.com",
+      "password": "19931993"
     }
   ]
 }

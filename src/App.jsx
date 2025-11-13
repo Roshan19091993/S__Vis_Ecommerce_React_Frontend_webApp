@@ -1,5 +1,5 @@
   import {BrowserRouter,Router, Routes,Route } from "react-router-dom";
-  import { useContext, useState } from "react";
+  import {  useState } from "react";
   import Navbar from "./components/Navbar";
  import Footer from "./components/Footer";
   import Home from "./pages/Home";
@@ -14,7 +14,7 @@ import Checkout from "./pages/Checkout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import ProductDetails from "./pages/ProductDetils";
+import ProductDetails from "./pages/ProductDetails";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setProducts } from "./redux/productSlice";

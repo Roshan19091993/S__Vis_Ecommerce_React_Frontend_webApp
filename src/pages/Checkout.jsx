@@ -140,7 +140,7 @@ const Checkout = ({ setOrder }) => {
                   <input
                     type='text'
                     className='form-control'
-                    placeholder='Enter Address'
+                    placeholder='Enter City'
                     value={shippingInfo.city}
                     onChange={(e) =>
                       setShippingInfo({
@@ -156,7 +156,7 @@ const Checkout = ({ setOrder }) => {
                   <input
                     type='text'
                     className='form-control'
-                    placeholder='Enter City'
+                    placeholder='Enter State'
                     value={shippingInfo.state}
                     onChange={(e) =>
                       setShippingInfo({ ...shippingInfo, state: e.target.value })
