@@ -71,6 +71,7 @@
 //   );
 // };
 
+
 import React, { createContext, useState } from "react";
 
 export const CategoryContext = createContext();
@@ -83,28 +84,30 @@ export const CategoryProvider = ({ children }) => {
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [priceRange, setPriceRange] = useState(500);
   const [address, setAddress] = useState("");
+  
+  // **Auth state here**
+  const [loggedUser, setLoggedUser] = useState(
+    JSON.parse(localStorage.getItem("loggedUser")) || null
+  );
 
-  // Login modal state
+  // Login modal
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
 
   return (
     <CategoryContext.Provider
       value={{
-        category,
-        setCategory,
-        subcategory,
-        setSubcategory,
-        selectedBrands,
-        setSelectedBrands,
-        selectedColors,
-        setSelectedColors,
-        selectedSizes,
-        setSelectedSizes,
-        priceRange,
-        setPriceRange,
-        address,
-        setAddress,
+        category, setCategory,
+        subcategory, setSubcategory,
+        selectedBrands, setSelectedBrands,
+        selectedColors, setSelectedColors,
+        selectedSizes, setSelectedSizes,
+        priceRange, setPriceRange,
+        address, setAddress,
+
+        loggedUser,
+        setLoggedUser,
+
         isLoginModalOpen,
         setIsLoginModalOpen,
         isLogin,

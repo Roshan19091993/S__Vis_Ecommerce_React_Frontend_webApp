@@ -1,0 +1,259 @@
+{
+  "users": [
+    {
+      "id": "5e37",
+      "username": "akshay gawali",
+      "email": "akgawali@gmail.com",
+      "password": "12345678",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "cart": [
+        
+      ],
+      "orders": [
+    
+      ],
+      "createdAt": "2024-01-15T10:00:00",
+      "lastLogin": "2024-01-15T10:00:00",
+      "loginCount": 1,
+      "activity": [
+        {
+          "event": "account_created",
+          "time": "2024-01-15 10:00 AM"
+        }
+      ]
+     
+    },
+    {
+      "id": "5a55",
+      "username": "ashish ade",
+      "email": "ashishad23@gmail.com",
+      "password": "ashish@143",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "cart": [],
+      "orders": [],
+      "createdAt": "2024-01-16T11:00:00",
+      "lastLogin": "2024-01-16T11:00:00",
+      "loginCount": 1,
+      "activity": [
+        {
+          "event": "account_created",
+          "time": "2024-01-16 11:00 AM"
+        }
+      ]
+    },
+    {
+      "id": "6d01",
+      "username": "tejas lokhande",
+      "email": "tejas45@gmail.com",
+      "password": "tejas@45",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "cart": [
+        {
+          "id": 34,
+          "category": "women",
+          "name": "Women Sweater",
+          "price": 35,
+          "img": [
+            "/src/assets/Categories/women/sweater1.jpg",
+            "/src/assets/Categories/women/sweater2.jpg",
+            "/src/assets/Categories/women/sweater3.jpg",
+            "/src/assets/Categories/women/sweater4.jpg",
+            "/src/assets/Categories/women/sweater5.jpg",
+            "/src/assets/Categories/women/sweater6.jpg"
+          ],
+          "size": "M",
+          "color": "purple",
+          "brand": "H&M",
+          "description": "Elegant .",
+          "quantity": 1,
+          "totalPrice": 35
+        }
+      ],
+      "orders": [
+        {
+          "products": [
+            {
+              "id": 35,
+              "category": "men",
+              "name": "Men shirts",
+              "price": 50,
+              "img": [
+                "/src/assets/Categories/men/AllenSolley%20(1).jpg",
+                "/src/assets/Categories/men/AllenSolley%20(2).jpg",
+                "/src/assets/Categories/men/AllenSolley%20(3).jpg",
+                "/src/assets/Categories/men/AllenSolley%20(4).jpg",
+                "/src/assets/Categories/men/AllenSolley%20(5).jpg"
+              ],
+              "size": "L",
+              "color": "Red",
+              "brand": "AllenSolley",
+              "description": "Stylish men red shirts .",
+              "quantity": 1,
+              "totalPrice": 50
+            },
+            {
+              "id": 39,
+              "category": "kids",
+              "subcategory": "boys",
+              "name": "Boys T-shirt",
+              "price": 25,
+              "img": [
+                "/src/assets/Categories/Kids/Tshirts1.jpg",
+                "/src/assets/Categories/Kids/Tshirts2.jpg",
+                "/src/assets/Categories/Kids/Tshirts3.jpg",
+                "/src/assets/Categories/Kids/Tshirts4.jpg"
+              ],
+              "size": "M",
+              "color": "Orange,Red,Blue,Yellow",
+              "brand": "Nike",
+              "description": "Cotton T-shirt for boys.",
+              "quantity": 1,
+              "totalPrice": 25
+            }
+          ],
+          "orderNumber": 339244,
+          "billingInformation": {
+            "name": "Tejas .B. Lokhande",
+            "email": "tejas45@gmail.com",
+            "phone": "9556748976"
+          },
+          "shippingInformation": {
+            "city": "Nagpur",
+            "state": "Maharastra",
+            "pincode": "441110"
+          },
+          "totalPrice": 75,
+          "paymentMethod": "dc"
+        },
+        {
+          "products": [
+            {
+              "id": 34,
+              "category": "women",
+              "name": "Women Sweater",
+              "price": 35,
+              "img": [
+                "/src/assets/Categories/women/sweater1.jpg",
+                "/src/assets/Categories/women/sweater2.jpg",
+                "/src/assets/Categories/women/sweater3.jpg",
+                "/src/assets/Categories/women/sweater4.jpg",
+                "/src/assets/Categories/women/sweater5.jpg",
+                "/src/assets/Categories/women/sweater6.jpg"
+              ],
+              "size": "M",
+              "color": "purple",
+              "brand": "H&M",
+              "description": "Elegant .",
+              "quantity": 1,
+              "totalPrice": 35
+            }
+          ],
+          "orderNumber": 691944,
+          "billingInformation": {
+            "name": "tejas",
+            "email": "tejas45@gmail.com",
+            "phone": "9554375423"
+          },
+          "shippingInformation": {
+            "city": "nagpur",
+            "state": "maharastra",
+            "pincode": "441110"
+          },
+          "totalPrice": 35,
+          "paymentMethod": "cod"
+        },
+        {
+          "products": [
+            {
+              "id": 34,
+              "category": "women",
+              "name": "Women Sweater",
+              "price": 35,
+              "img": [
+                "/src/assets/Categories/women/sweater1.jpg",
+                "/src/assets/Categories/women/sweater2.jpg",
+                "/src/assets/Categories/women/sweater3.jpg",
+                "/src/assets/Categories/women/sweater4.jpg",
+                "/src/assets/Categories/women/sweater5.jpg",
+                "/src/assets/Categories/women/sweater6.jpg"
+              ],
+              "size": "M",
+              "color": "purple",
+              "brand": "H&M",
+              "description": "Elegant .",
+              "quantity": 1,
+              "totalPrice": 35
+            }
+          ],
+          "orderNumber": 691944,
+          "billingInformation": {
+            "name": "tejas",
+            "email": "tejas45@gmail.com",
+            "phone": "9554375423"
+          },
+          "shippingInformation": {
+            "city": "nagpur",
+            "state": "maharastra",
+            "pincode": "441110"
+          },
+          "totalPrice": 35,
+          "paymentMethod": "cod"
+        }
+      ],
+      "createdAt": "2024-01-17T09:30:00",
+      "lastLogin": "2024-01-17T09:30:00",
+      "loginCount": 1,
+      "activity": [
+        {
+          "event": "account_created",
+          "time": "2024-01-17 9:30 AM"
+        }
+      ],
+      "name": "",
+      "phone": "9556748976",
+      "address": {
+        "street": "hingna road",
+        "city": "nagpur",
+        "state": "",
+        "zip": "441110"
+      }
+    },
+    {
+      "id": "d66f",
+      "username": "pratik raut",
+      "email": "pratikRaut9545@gmail.com",
+      "password": "pratik@9545",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "cart": [],
+      "orders": [],
+      "createdAt": "2024-01-18T08:45:00",
+      "lastLogin": "2024-01-18T08:45:00",
+      "loginCount": 1,
+      "activity": [
+        {
+          "event": "account_created",
+          "time": "2024-01-18 8:45 AM"
+        }
+      ]
+    },
+    {
+      "id": "8ed3",
+      "username": "chetan kodi",
+      "email": "chetanKodi65@gmail.com",
+      "password": "chetan@65",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "cart": [],
+      "orders": [],
+      "createdAt": "2025-11-15T17:54:57.215Z",
+      "lastLogin": "2025-11-15T17:54:57.215Z",
+      "loginCount": 1,
+      "activity": [
+        {
+          "event": "account_created",
+          "time": "15/11/2025, 23:24:57"
+        }
+      ]
+    }
+  ]
+  
+}

@@ -39,11 +39,12 @@ const initialState = {
 
 const productSlice = createSlice({
   name: "product",
-  initialState,
+  initialState, 
   reducers: {
     setProducts: (state, action) => {
       state.products = action.payload;
       state.filteredData = action.payload;
+       localStorage.setItem("products", JSON.stringify(action.payload));
     },
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;

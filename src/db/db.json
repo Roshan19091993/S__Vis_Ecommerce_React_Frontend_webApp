@@ -4,31 +4,153 @@
       "id": "5e37",
       "username": "akshay gawali",
       "email": "akgawali@gmail.com",
-      "password": "12345678"
+      "password": "12345678",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "cart": [],
+      "orders": [
+        {
+          "products": [
+            {
+              "id": 39,
+              "category": "kids",
+              "subcategory": "boys",
+              "name": "Boys T-shirt",
+              "price": 25,
+              "img": [
+                "/src/assets/Categories/Kids/Tshirts1.jpg",
+                "/src/assets/Categories/Kids/Tshirts2.jpg",
+                "/src/assets/Categories/Kids/Tshirts3.jpg",
+                "/src/assets/Categories/Kids/Tshirts4.jpg"
+              ],
+              "size": "M",
+              "color": "Orange,Red,Blue,Yellow",
+              "brand": "Nike",
+              "description": "Cotton T-shirt for boys.",
+              "cartId": "39-M-Orange,Red,Blue,Yellow",
+              "quantity": 1,
+              "totalPrice": 25
+            }
+          ],
+          "orderNumber": 560266,
+          "billingInformation": {
+            "name": "Akshay Gawali",
+            "email": "akgawali@gmail.com",
+            "phone": "9786789087"
+          },
+          "shippingInformation": {
+            "city": "Nagpur",
+            "state": "Maharastra",
+            "pincode": "441110"
+          },
+          "totalPrice": 25,
+          "paymentMethod": "cod"
+        }
+      ],
+      "createdAt": "2024-01-15T10:00:00",
+      "lastLogin": "2024-01-15T10:00:00",
+      "loginCount": 1,
+      "activity": [
+        {
+          "event": "account_created",
+          "time": "2024-01-15 10:00 AM"
+        }
+      ],
+      "name": "akshay gawali",
+      "phone": "9556748976",
+      "address": {
+        "street": "hingna road",
+        "city": "nagpur",
+        "state": "maharastra",
+        "zip": "441110"
+      }
     },
     {
       "id": "5a55",
       "username": "ashish ade",
       "email": "ashishad23@gmail.com",
-      "password": "ashish@143"
+      "password": "ashish@143",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "cart": [],
+      "orders": [],
+      "createdAt": "2024-01-16T11:00:00",
+      "lastLogin": "2024-01-16T11:00:00",
+      "loginCount": 1,
+      "activity": [
+        {
+          "event": "account_created",
+          "time": "2024-01-16 11:00 AM"
+        }
+      ],
+      "name": "ashish ade",
+      "phone": "",
+      "address": {
+        "street": "hingna road",
+        "city": "nagpur",
+        "state": "maharastra",
+        "zip": "441110"
+      }
     },
     {
       "id": "6d01",
       "username": "tejas lokhande",
       "email": "tejas45@gmail.com",
-      "password": "tejas@45"
+      "password": "tejas@45",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "cart": [],
+      "orders": [],
+      "createdAt": "2024-01-17T09:30:00",
+      "lastLogin": "2024-01-17T09:30:00",
+      "loginCount": 1,
+      "activity": [
+        {
+          "event": "account_created",
+          "time": "2024-01-17 9:30 AM"
+        }
+      ],
+      "name": "",
+      "phone": "9556748976",
+      "address": {
+        "street": "hingna road",
+        "city": "nagpur",
+        "state": "",
+        "zip": "441110"
+      }
     },
     {
       "id": "d66f",
-      "username": "pratik Raut",
+      "username": "pratik raut",
       "email": "pratikRaut9545@gmail.com",
-      "password": "pratik@9545"
+      "password": "pratik@9545",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "cart": [],
+      "orders": [],
+      "createdAt": "2024-01-18T08:45:00",
+      "lastLogin": "2024-01-18T08:45:00",
+      "loginCount": 1,
+      "activity": [
+        {
+          "event": "account_created",
+          "time": "2024-01-18 8:45 AM"
+        }
+      ]
     },
     {
-      "id": "3720",
-      "username": "Rahul Rajput",
-      "email": "rahulrajput1993@gmail.com",
-      "password": "19931993"
+      "id": "8ed3",
+      "username": "chetan kodi",
+      "email": "chetanKodi65@gmail.com",
+      "password": "chetan@65",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "cart": [],
+      "orders": [],
+      "createdAt": "2025-11-15T17:54:57.215Z",
+      "lastLogin": "2025-11-15T17:54:57.215Z",
+      "loginCount": 1,
+      "activity": [
+        {
+          "event": "account_created",
+          "time": "15/11/2025, 23:24:57"
+        }
+      ]
     }
   ]
 }

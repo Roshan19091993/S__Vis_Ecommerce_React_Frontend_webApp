@@ -111,22 +111,22 @@ import J5 from "../assets/Categories/men/MenJacket5.jpg";
 
 export const mockData = [
   // --- WOMEN ---
-  { id: 1, category: "women", name: "Women Dress", price: 45, img: [p1,p2,p3,p4], size: "M", color: "pink", brand: "AllenSolley", description: "Stylish women’s medi dress." },
-  { id: 2, category: "women", name: "Women Pants", price: 30, img: [pa1,pa2,pa3,pa4], size: "S", color: "White", brand: "Nike", description: "Fashionable pants for women." },
-  { id: 3, category: "women", name: "Women Jacket", price: 60, img: [bl1,bl2,bl3,bl4], size: "L", color: "Blue", brand: "Adidas", description: "Warm and stylish jacket." },
-  { id: 4, category: "women", name: "Women Sweater", price: 35, img: [s1,s2,s3,s4,s5,s6], size: "M", color: "purple", brand: "H&M", description: "Elegant ." },
+  { id: 31, category: "women", name: "Women Dress", price: 45, img: [p1,p2,p3,p4], size: "M", color: "pink", brand: "AllenSolley", description: "Stylish women’s medi dress." },
+  { id: 32, category: "women", name: "Women Pants", price: 30, img: [pa1,pa2,pa3,pa4], size: "S", color: "White", brand: "Nike", description: "Fashionable pants for women." },
+  { id: 33, category: "women", name: "Women Jacket", price: 60, img: [bl1,bl2,bl3,bl4], size: "L", color: "Blue", brand: "Adidas", description: "Warm and stylish jacket." },
+  { id: 34, category: "women", name: "Women Sweater", price: 35, img: [s1,s2,s3,s4,s5,s6], size: "M", color: "purple", brand: "H&M", description: "Elegant ." },
 
   // --- MEN ---
-  { id: 5, category: "men", name: "Men shirts", price: 50, img: [Al1,Al2,Al3,Al4,Al5], size: "L", color: "Red", brand: "AllenSolley", description: "Stylish men red shirts ." },
-  { id: 6, category: "men", name: "Men T-Shirt", price: 25, img: [Pt1,Pt2,Pt3,Pt4,Pt5], size: "M", color: "Black", brand: "puma", description: "Basic T-shirt." },
-  { id: 7, category: "men", name: "Men Jeans", price: 60, img: [Lj1,Lj2,Lj3,Lj4,Lj5], size: "34", color: "Blue", brand: "Levi's", description: "Classic fit jeans." },
-  { id: 8, category: "men", name: "Men Jacket", price: 80, img: [J1,J2,J3,J4,J5], size: "XL", color: "White", brand: "Nike", description: "Stylish winter jacket." },
+  { id: 35, category: "men", name: "Men shirts", price: 50, img: [Al1,Al2,Al3,Al4,Al5], size: "L", color: "Red", brand: "AllenSolley", description: "Stylish men red shirts ." },
+  { id: 36, category: "men", name: "Men T-Shirt", price: 25, img: [Pt1,Pt2,Pt3,Pt4,Pt5], size: "M", color: "Black", brand: "puma", description: "Basic T-shirt." },
+  { id: 37, category: "men", name: "Men Jeans", price: 60, img: [Lj1,Lj2,Lj3,Lj4,Lj5], size: "34", color: "Blue", brand: "Levi's", description: "Classic fit jeans." },
+  { id: 38, category: "men", name: "Men Jacket", price: 80, img: [J1,J2,J3,J4,J5], size: "XL", color: "White", brand: "Nike", description: "Stylish winter jacket." },
 
   // --- KIDS ---
-  { id: 9, category: "kids", subcategory: "boys", name: "Boys T-shirt", price: 25, img: [Ts1,Ts2,Ts3,Ts4], size: "M", color: "Orange,Red,Blue,Yellow", brand: "Nike", description: "Cotton T-shirt for boys." },
-  { id: 10, category: "kids", subcategory: "boys", name: "Boys Pants", price: 40, img: [Bt1,Bt2,Bt3,Bt4], size: "L", color: "Blue", brand: "Denim", description: "Denim jeans for boys." },
-  { id: 11, category: "kids", subcategory: "girls", name: "Girls Dress", price: 30, img: [g1, g2, g3, g4,g5], size: "S", color: "Red", brand: "Puma", description: "Elegant dress for girls." },
-  { id: 12, category: "kids", subcategory: "girls", name: "Girls Top", price: 20, img: [Gt1,Gt2,Gt3,Gt4], size: "M", color: "Orange", brand: "Nike", description: "Stylish top for girls." }
+  { id: 39, category: "kids", subcategory: "boys", name: "Boys T-shirt", price: 25, img: [Ts1,Ts2,Ts3,Ts4], size: "M", color: "Orange,Red,Blue,Yellow", brand: "Nike", description: "Cotton T-shirt for boys." },
+  { id: 40, category: "kids", subcategory: "boys", name: "Boys Pants", price: 40, img: [Bt1,Bt2,Bt3,Bt4], size: "L", color: "Blue", brand: "Denim", description: "Denim jeans for boys." },
+  { id: 41, category: "kids", subcategory: "girls", name: "Girls Dress", price: 30, img: [g1, g2, g3, g4,g5], size: "S", color: "Red", brand: "Puma", description: "Elegant dress for girls." },
+  { id: 42, category: "kids", subcategory: "girls", name: "Girls Top", price: 20, img: [Gt1,Gt2,Gt3,Gt4], size: "M", color: "Orange", brand: "Nike", description: "Stylish top for girls." }
 ];
 
 
